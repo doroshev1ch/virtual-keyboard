@@ -532,6 +532,14 @@ body {
 .footer-img {
     margin-top: 40px;
 }
+.footer-text_first:hover {
+    color:#f1e9e3;
+    transition: 1s;
+}
+.footer-text_second:hover {
+    color:#f1e9e3;
+    transition: 1s;
+}
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		transform: translateY(0);
