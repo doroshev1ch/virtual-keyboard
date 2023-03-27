@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    margin: 0;
+}
+.section {
+    padding: 0px 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#header {
+    background: #FFFFFF;
+}
+.logo {
+    margin-top: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+.logo1part {
+    width: 184px;
+    height: 35px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.logo2part {
+    width: 179px;
+    height: 15px;
+    padding-left: 4px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #292929;
+    margin: 0;
+}
+.nav {
+    margin-top: 46px ;
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.nav-list {
+    height: 27px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+.nav-item {
+    display: flex;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    white-space: nowrap;
+    padding-left: 35px;
+}
+.nav-link {
+    color:  #545454;
+    cursor: pointer;
+    text-decoration: none;
+}
+#our-friends {
+    background: #F6F6F6;
+}
+#our-friends- {
+    padding: 0;
+}
+.friends-section {
+    display: flex;
+    flex-direction: column;
+}
+.friends-title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+.pets-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+.pets-card {
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 0px 20px 30px 20px;
+}
+.pets-card:hover {
+    animation: bounce 1s;
+}
+.pets-name {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-align: center;
+    padding-top: 30px;
+    margin: 0;
+}
+.pets-card-button {
+    padding: 15px 45px;
+    width: 187px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background:#FAFAFA;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+.pets-card-button:hover {
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 1s;
+}
+.navigation {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.pets_button_arrow {
+    border: 2px solid #CDCDCD;
+    background: #FFFFFF;
+    border-radius: 100px;
+    padding: 23px 19px;
+    width: 52px;
+    height: 52px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #CDCDCD;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.pets_button_arrow:hover {
+    background: #F1CDB3;
+    border: 2px solid #F1CDB3;
+    color:#292929;
+    transition: 1s;
+}
+#center_arrow {
+    background: #F1CDB3;
+    border: 2px solid #F1CDB3;
+    color:#292929;
+}
+#right_arrow {
+    border: 2px solid #F1CDB3;
+    color: #292929;
+}
+#right_arrow2 {
+    border: 2px solid #F1CDB3;
+    color: #292929;
+}
+.footer {
+    background: repeat center url(../shelter/assets/jpg/footer-background.jpg), url(/shelter/assets/png/footer-gradient-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+    background-size: 100%;
+    background-clip: clip !important;
+    background-repeat: repeat;
+}
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
+.left-content-footer {
+    display: flex;
+    flex-direction: column;
+    width: 278px;
+    height: 234px;
+    margin-right: 160px;
+}
+.right-content-footer {
+    display: flex;
+    flex-direction: column;
+    width: 302px;
+    height: 234px;
+    margin-right: 160px;
+}
+.footer-title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    white-space: nowrap;
+    margin-top: 56px;
+    margin-bottom: 0;
+}
+.footer-text_first, .footer-text_second {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    display: flex;
+    flex-direction: row;
+}
+.footer-text_first {
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+.footer-text_second {
+    margin-top: 34px;
+    margin-bottom: 0;
+}
+.footer-icon {
+    padding-right: 20px;
+}
+.footer-img {
+    margin-top: 40px;
+}
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
