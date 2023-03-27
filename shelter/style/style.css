@@ -84,6 +84,19 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
+.nav-link:hover {
+    color: #FAFAFA;
+    transition: 1s;
+}
+.nav-link:active {
+    text-decoration: underline solid 3px #F1CDB3;
+    color: #FAFAFA;
+    transition: 1s;
+}
+#about-link {
+    text-decoration: underline solid 3px #F1CDB3;
+    color: #FAFAFA;
+}
 .start-screen {
     margin-top: 90px;
     display: flex;

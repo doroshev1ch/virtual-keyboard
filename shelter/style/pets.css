@@ -84,6 +84,20 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
+.nav-link:hover {
+    color: #292929;
+    transition: 1s;
+}
+.nav-link:active {
+    text-decoration: underline solid 3px #F1CDB3;
+    color: #292929;
+    transition: 1s;
+}
+#pets-0ur {
+    text-decoration: underline solid 3px #F1CDB3;
+    color: #292929;
+
+}
 #our-friends {
     background: #F6F6F6;
 }
@@ -279,6 +293,14 @@ body {
 }
 .footer-img {
     margin-top: 40px;
+}
+.footer-text_first:hover {
+    color:#f1e9e3;
+    transition: 1s;
+}
+.footer-text_second:hover {
+    color:#f1e9e3;
+    transition: 1s;
 }
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
