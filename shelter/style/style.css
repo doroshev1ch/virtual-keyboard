@@ -65,6 +65,9 @@ body {
     color: #FFFFFF;
     margin: 0;
 }
+.burger {
+    display: none;
+}
 .nav-list {
     height: 27px;
     display: flex;
@@ -569,7 +572,6 @@ body {
     to {transform:rotate(360deg);}
 }
 @media (max-width: 768px) {
-
     .section {
         padding: 0;
         margin: 0;
@@ -594,6 +596,8 @@ body {
     .right-content {
         padding: 0;
         margin: 0;
+        display: flex;
+        align-items: flex-start;
     }
     .screen-button {
         margin-bottom: 100px;
@@ -654,6 +658,7 @@ body {
     }
     .help-item-text {
         white-space: nowrap;
+        font-size: 15px;
     }
     .donation-section {
         flex-direction: column-reverse;
@@ -691,5 +696,207 @@ body {
     }
     .footer-text_first, .footer-text_second {
         align-items: center;
+    }
+}
+@media (max-width: 320px) {
+    .section {
+        padding: 0p;
+        margin: 0;
+        max-width: 320px;
+    }
+   .logo {
+        margin: 0;
+    }
+    .start-screen {
+        height: auto;
+    }
+    .nav-bar {
+        padding: 30px 20px 0px 20px;
+    }
+    .nav {
+        display: none;
+    }
+    .bg-line {
+        width: 30px;
+        height: 2px;
+        background-color: #f1cdb3;
+    }
+    .left-content {
+        align-items: center;
+    }
+    .screen-title {
+        font-size: 25px;
+        width: 200px;
+        height: 64px;
+        letter-spacing: 0.06em;
+        line-height: 32px;
+        text-align: center;
+    }
+    .screen-text {
+        text-align: center;
+        width: 300px;
+        height: 96px;
+    }
+    .screen-button {
+        margin: 0;
+    }
+    .start-screen_puppy {
+        width: 260px;
+        height: 271.77px;
+        margin-top: 105px;
+        margin-left: 50px;
+    }
+    .about-section {
+        padding: 42px 0px 42px 0px;
+    }
+    .about-content {
+        padding: 0;
+        padding-bottom: 42px;
+        text-align: justify;
+    }
+    .about-title {
+        font-size: 25px;
+        width: 250px;
+        height: 64px;
+        text-align: center;
+        line-height: 32px;
+        margin: 0px 10px;
+    }
+    .about-text {
+        width: 270px;
+    }
+    .about-img {
+        margin: 0;
+        width: 260px;
+        height: 353.6px;
+    }
+    .pets-title {
+        font-size: 25px;
+        margin: 42px 0px;
+        width: 290px;
+        height: 64px;
+        line-height: 32px;
+    }
+    #center-pets {
+        display: none;
+    }
+    .pets-section {
+        padding: 0;
+    }
+    .pets-slider {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 42px;
+    }
+    .pets_button_arrow {
+        order: 2;
+    }
+    #left_arrow {
+        margin-right: 40px;
+    }
+    #right_arrow {
+        margin-left: 40px;
+    }
+    .pets-card {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .pets-button {
+        margin-bottom: 42px;
+    }
+    .help-section {
+        margin: 42px 0px 12px 0px;
+        padding: 0;
+    }
+    .help-title {
+        font-size: 25px;
+        height: 64px;
+        padding: 0;
+        margin-bottom: 42px;
+        line-height: 32px
+    }
+    .help-list {
+        padding: 0px 5px;
+        margin: 0px 10px;
+        justify-content: space-between;
+        align-items: flex-start;
+        column-gap: 30px;
+    }
+    .help-item {
+        width: 130px;
+        height: 87px;
+        margin-bottom: 30px;
+    }
+    .help-img {
+        width: 50px;
+        height: 50px;
+    }
+    .help-item-text {
+        margin-top: 20px;
+        line-height: 17px;
+    }
+    .donation-content {
+        margin: 42px 0px;
+        width: 300px;
+        align-items: center;
+    }
+    .donation-title {
+        font-size: 25px;
+        height: 64px;
+        text-align: center;
+        line-height: 32px;
+    }
+    .donation-subtitle {
+        white-space: nowrap;
+        width: 273px;
+        height: 24px;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+    #card-number {
+        width: 281px;
+        height: 43px;
+        font-size: 15px;
+    }
+    .donation-text {
+        text-align: justify;
+        margin: 0px 10px;
+    }
+    .dnt-img {
+        width: 260px;
+        height: 135.2px;
+        margin-bottom: 42px;
+    }
+    .ft {
+        padding: 0px 21px;
+    }
+    .footer-content {
+        flex-direction: column;
+        justify-content: center
+    }
+    .footer-title {
+        width: 278px;
+        height: 64px;
+        line-height: 32px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .left-content-footer {
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .right-content-footer {
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .footer-text_second {
+        margin-top: 40px;
+    }
+    .footer-img {
+        margin-top: 40px;
+        width: 260px;
+        height: 269px;
     }
 }
