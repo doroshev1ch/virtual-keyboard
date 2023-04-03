@@ -94,9 +94,8 @@ body {
     transition: 1s;
 }
 #pets-0ur {
-    text-decoration: underline solid 3px #F1CDB3;
+    border-bottom: 0.1875rem solid #f1cdb3;
     color: #292929;
-
 }
 #our-friends {
     background: #F6F6F6;
@@ -212,12 +211,6 @@ body {
     margin: 0px 10px;
     cursor: pointer;
 }
-.pets_button_arrow:hover {
-    background: #F1CDB3;
-    border: 2px solid #F1CDB3;
-    color:#292929;
-    transition: 1s;
-}
 #center_arrow {
     background: #F1CDB3;
     border: 2px solid #F1CDB3;
@@ -227,21 +220,30 @@ body {
     border: 2px solid #F1CDB3;
     color: #292929;
 }
+#right_arrow:hover, #right_arrow2:hover {
+    background: #F1CDB3;
+    border: 2px solid #F1CDB3;
+    color:#292929;
+    transition: 1s;
+}
 #right_arrow2 {
     border: 2px solid #F1CDB3;
     color: #292929;
 }
 .footer {
-    background: repeat center url(../shelter/assets/jpg/footer-background.jpg), url(/shelter/assets/png/footer-gradient-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
-    background-size: 100%;
-    background-clip: clip !important;
-    background-repeat: repeat;
+    background-image: url(/shelter/assets/png/start-screen-gradient-background.png), linear-gradient(90deg, #5B483A 0%, #262425 100%, #211F20 100%);
+    background-size: cover;
+}
+.ft {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    padding: 0px 40px;
 }
 .footer-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0px 40px;
+    padding: 0;
 }
 .left-content-footer {
     display: flex;
@@ -279,6 +281,7 @@ body {
     color: #F1CDB3;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .footer-text_first {
     margin-top: 40px;
@@ -321,4 +324,57 @@ body {
 @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
+}
+@media (max-width: 768px) {
+    .section {
+        padding: 0px 30px;
+        max-width: 768px;
+    }
+    .ft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content {
+        margin: 0px 64px;
+        padding: 0;
+    }
+    .left-content-footer, .right-content-footer {
+        height: auto;
+    }
+    .left-content-footer {
+        margin-right: 60px;
+    }
+    .right-content-footer {
+        margin-right: 0px;
+    }
+    .footer-title {
+        margin-top: 30px;
+    }
+    .footer-img {
+        margin-top: 65px;
+    }
+    .footer-text_first, .footer-text_second {
+        align-items: center;
+    }
+    #scarlet, #freddie {
+        display: none;
+    }
+    /* .page_one {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    } */
+    .friends-title {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .navigation {
+        margin-top: 10px;
+        margin-bottom: 76px;
+    }
+    /* .footer-text_first, .footer-text_second {
+        
+    } */
 }
