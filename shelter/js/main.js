@@ -30,75 +30,38 @@ anchors.forEach(anchor => {
             behavior: "smooth",
             block: "start"
         });
-    })
-})
-
-// const slider = document.querySelector('.pets-slider');
-// const cards = Array.from(document.querySelectorAll('.pets-card'));
-
-// // Устанавливаем ширину слайдера
-// const sliderWidth = slider.clientWidth;
-
-// // Устанавливаем начальное положение слайдера
-// let sliderPosition = 0;
-
-// // Устанавливаем количество карточек для отображения
-// const cardsToShow = 3;
-
-// // Функция для обновления положения слайдера
-// function updateSliderPosition() {
-//   slider.style.transform = `translateX(-${sliderPosition}px)`;
-// }
-
-// // Функция для переключения карточек вперед
-// function slideNext() {
-//   sliderPosition += sliderWidth / cardsToShow;
-//   if (sliderPosition > sliderWidth * (cards.length - cardsToShow) / cardsToShow) {
-//     sliderPosition = 0;
-//   }
-//   updateSliderPosition();
-// }
-
-// // Функция для переключения карточек назад
-// function slidePrev() {
-//   sliderPosition -= sliderWidth / cardsToShow;
-//   if (sliderPosition < 0) {
-//     sliderPosition = sliderWidth * (cards.length - cardsToShow) / cardsToShow;
-//   }
-//   updateSliderPosition();
-// }
-
-// // Добавляем обработчики событий на кнопки переключения
-// document.querySelector('#left_arrow').addEventListener('click', slidePrev);
-// document.querySelector('#right_arrow').addEventListener('click', slideNext);
-
-const slider = document.querySelector('.pets-slider');
-const cards = document.querySelectorAll('.pets-card');
-const leftBtn = document.querySelector('#left_arrow');
-const rightBtn = document.querySelector('#right_arrow');
-
-let cardIndex = 0;
-const cardWidth = cards[0].offsetWidth;
-const cardMarginRight = parseInt(getComputedStyle(cards[0]).marginRight);
-
-slider.style.width = `${(cardWidth + cardMarginRight) * cards.length}px`;
-
-leftBtn.addEventListener('click', () => {
-  cardIndex--;
-  if (cardIndex < 0) {
-    cardIndex = cards.length - 3;
-    slider.style.transform = `translateX(-${(cardWidth + cardMarginRight) * (cards.length - 3)}px)`;
-  } else {
-    slider.style.transform = `translateX(-${(cardWidth + cardMarginRight) * cardIndex}px)`;
-  }
+    });
 });
 
-rightBtn.addEventListener('click', () => {
-  cardIndex++;
-  if (cardIndex > cards.length - 3) {
-    cardIndex = 0;
-    slider.style.transform = 'translateX(0)';
-  } else {
-    slider.style.transform = `translateX(-${(cardWidth + cardMarginRight) * cardIndex}px)`;
+const slider = document.querySelector('.pets-slider');
+const sliderCards = document.querySelectorAll('.pets-card');
+const sliderBtnPrev = document.querySelector('#left_arrow');
+const sliderBtnNext = document.querySelector('#right_arrow');
+
+const CARDS_PER_PAGE = 3;
+const CARD_WIDTH = sliderCards[0].offsetWidth;
+let sliderOffset = 0;
+
+const updateSliderOffset = () => {
+  slider.style.transform = `translateX(${-sliderOffset}px)`;
+};
+
+sliderBtnNext.addEventListener('click', () => {
+  sliderOffset += CARD_WIDTH * CARDS_PER_PAGE;
+
+  if (sliderOffset >= CARD_WIDTH * sliderCards.length) {
+    sliderOffset = 0;
   }
+
+  updateSliderOffset();
+});
+
+sliderBtnPrev.addEventListener('click', () => {
+  sliderOffset -= CARD_WIDTH * CARDS_PER_PAGE;
+
+  if (sliderOffset < 0) {
+    sliderOffset = CARD_WIDTH * (sliderCards.length - CARDS_PER_PAGE);
+  }
+
+  updateSliderOffset();
 });
