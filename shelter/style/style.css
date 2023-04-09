@@ -229,14 +229,45 @@ body {
     letter-spacing: 0.06em;
     color: #545454;
 }
-.pets-slider {
+.slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.slider-wrapper {
+    overflow: hidden;
+}
+/* .slider {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+} */
+.pets-slider {
+    /* overflow: hidden;
+    width: calc(100% - 100px);
+    justify-content: space-between;
+    transition: transform 0.6s ease; */
+    width: 300%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 60px;
 }
 .pets_button_arrow {
+    /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; */
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
     padding: 23px 19px;
     width: 52px;
     height: 52px;
@@ -247,6 +278,9 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
+    /* position: absolute; */
+    
+    
 }
 .pets_button_arrow:hover {
     background: #F1CDB3;
@@ -260,6 +294,9 @@ body {
     margin-left: 53px;
 }
 .pets-card {
+    /* width: calc(100% / 3);
+    flex-shrink: 0; */
+    /* margin: 0px 45px; */
     width: 270px;
     height: 435px;
     background: #FAFAFA;
@@ -272,9 +309,9 @@ body {
 .pets-card:hover {
     animation: bounce 1s;
 }
-#center-pets {
+/* #center-pets {
     margin: 0px 90px 0px 90px;
-}
+} */
 .pets-name {
     font-family: 'Georgia';
     font-style: normal;
@@ -580,9 +617,49 @@ body {
     .nav-bar {
         padding: 0px 30px;
     }
-    /* #start-screen {
-        height: 1165px;
-    } */
+    .nav-list {
+        display: none;
+        transform: translateX(-150%);
+        transition: all 1s ease-in-out;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .burger.active {
+        transform: rotate(90deg);
+    }
+    .bg-line {
+        width: 30px;
+        height: 2px;
+        background-color: #f1cdb3;
+        margin-top: 8px;
+    }
+    .nav-list.active {
+        transform: translateX(0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #292929;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 168px 0px;
+        transition: all 1s ease-in-out;
+    }
+    .nav-link.active {
+        margin: 30px 38px;
+        color: #CDCDCD;
+        font-size: 32px;
+        line-height: 51px;
+    }
     .start-screen {
         margin-top: 60px;
         display: flex;
