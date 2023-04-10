@@ -229,14 +229,44 @@ body {
     letter-spacing: 0.06em;
     color: #545454;
 }
-.pets-slider {
+.slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.slider-wrapper {
+    overflow: hidden;
+}
+/* .slider {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+} */
+.pets-slider {
+    /* overflow: hidden;
+    width: calc(100% - 100px);
+    justify-content: space-between; */
+    transition: transform 0.6s ease;
+    width: 300% - 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-bottom: 60px;
 }
 .pets_button_arrow {
+    /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; */
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
     padding: 23px 19px;
     width: 52px;
     height: 52px;
@@ -247,6 +277,9 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
+    /* position: absolute; */
+    
+    
 }
 .pets_button_arrow:hover {
     background: #F1CDB3;
@@ -254,13 +287,16 @@ body {
     transition: 1s;
 }
 #left_arrow {
-    margin-right: 53px;
+    margin-right: 8px;
 }
 #right_arrow {
-    margin-left: 53px;
+    margin-left: 8px;
 }
 .pets-card {
-    width: 270px;
+    /* width: calc(100% / 3);
+    flex-shrink: 0; */
+    margin: 0px 45px;
+    width: calc(100% / 3);
     height: 435px;
     background: #FAFAFA;
     border-radius: 9px;
@@ -269,12 +305,16 @@ body {
     align-items: center;
     cursor: pointer;
 }
+/* .pets-card-img {
+    width: 270px;
+    height: 270px;
+} */
 .pets-card:hover {
     animation: bounce 1s;
 }
-#center-pets {
+/* #center-pets {
     margin: 0px 90px 0px 90px;
-}
+} */
 .pets-name {
     font-family: 'Georgia';
     font-style: normal;
@@ -580,9 +620,49 @@ body {
     .nav-bar {
         padding: 0px 30px;
     }
-    /* #start-screen {
-        height: 1165px;
-    } */
+    .nav-list {
+        display: none;
+        transform: translateX(-150%);
+        transition: all 1s ease-in-out;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .burger.active {
+        transform: rotate(90deg);
+    }
+    .bg-line {
+        width: 30px;
+        height: 2px;
+        background-color: #f1cdb3;
+        margin-top: 8px;
+    }
+    .nav-list.active {
+        transform: translateX(0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #292929;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 168px 0px;
+        transition: all 1s ease-in-out;
+    }
+    .nav-link.active {
+        margin: 30px 38px;
+        color: #CDCDCD;
+        font-size: 32px;
+        line-height: 51px;
+    }
     .start-screen {
         margin-top: 60px;
         display: flex;
@@ -624,10 +704,8 @@ body {
         margin-top: 80px;
     }
     .pets-card {
-        margin: 0px 40px 0px 0px;
-    }
-    #center-pets {
-        margin: 0;
+        margin: 0px 40px 0px 40px;
+        width: calc(100% / 2);
     }
     #last-pets {
         display: none;
@@ -813,18 +891,33 @@ body {
         height: 64px;
         line-height: 32px;
     }
-    #center-pets {
+    /* #center-pets {
         display: none;
-    }
+    } */
     .pets-section {
         padding: 0;
     }
-    .pets-slider {
+    .slider {
+        flex-direction: column;
         width: 100%;
+    }
+    .slider-wrapper {
+        overflow: hidden;
+    }
+    .pets-slider {
+        /* height: calc(100% / 8); */
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 42px;
-    }
+        overflow-x: scroll;
+        margin-bottom: 20px;
+      }
+      
+      .pets-card {
+        margin: 0 10px;
+        width: 80%;
+        max-width: 280px;
+      }
     .pets_button_arrow {
         order: 2;
     }
@@ -834,10 +927,7 @@ body {
     #right_arrow {
         margin-left: 40px;
     }
-    .pets-card {
-        margin: 0;
-        margin-bottom: 20px;
-    }
+
     .pets-button {
         margin-bottom: 42px;
     }
