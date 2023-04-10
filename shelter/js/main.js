@@ -37,8 +37,11 @@ const slider = document.querySelector('.pets-slider');
 const sliderCards = document.querySelectorAll('.pets-card');
 const sliderBtnPrev = document.querySelector('#left_arrow');
 const sliderBtnNext = document.querySelector('#right_arrow');
+const cardIMG = document.querySelectorAll('.pets-card-img');
 
-const CARDS_PER_PAGE = 3;
+// cardIMG.style.width = sliderCards.style.width;
+
+const CARDS_PER_PAGE = 2;
 const CARD_WIDTH = sliderCards[0].offsetWidth;
 let sliderOffset = 0;
 
