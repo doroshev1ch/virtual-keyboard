@@ -2,11 +2,14 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-.input-conteiner {
+.text-conteiner {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
+    margin: auto;
+    width: 500px;
+    height: 200px
+}
+.text-area:focus {
+    caret-color: black;
 }
 .keyboard-container {
     display: flex;
@@ -18,6 +21,7 @@
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin: 50px;
 }
 .keyboard-row {
     display: flex;
@@ -39,7 +43,8 @@
     padding: 15px;
     cursor: pointer;
 }
-.keyboard-key:hover {
+.keyboard-key:hover,
+.keyboard-key.active {
     background-color: rgb(225, 206, 246);
     border: 1px solid rgb(225, 206, 246);
 }
