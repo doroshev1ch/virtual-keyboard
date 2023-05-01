@@ -14,14 +14,14 @@ const keyboardRows = {
     ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
     ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
     ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '\u2191', 'Shift'],
-    ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', '\u2190', '▼', '\u2192', 'Ctrl'],
+    ['Control', 'Win', 'Alt', 'Space', 'Alt', '\u2190', '\u2193', '\u2192', 'Control'],
   ],
   ru: [
     ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
     ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\'],
     ['CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'],
     ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '?', '\u2191', 'Shift'],
-    ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', 'ArrowLeft', '\u2193', '\u2192', 'Ctrl'],
+    ['Control', 'Win', 'Alt', 'Space', 'Alt', '\u2190', '\u2193', '\u2192', 'Control'],
   ],
 };
 let lang = 'en';
@@ -125,4 +125,36 @@ window.addEventListener('keyup', (event) => {
       key.classList.remove('active');
     }
   });
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.code === 'Space') {
+    keyboardKeys.forEach((key) => {
+      if (key.textContent === 'Space') {
+        key.classList.add('active');
+      }
+    });
+  } else {
+    keyboardKeys.forEach((key) => {
+      if (key.textContent === event.key) {
+        key.classList.add('active');
+      }
+    });
+  }
+});
+
+window.addEventListener('keyup', (event) => {
+  if (event.code === 'Space') {
+    keyboardKeys.forEach((key) => {
+      if (key.textContent === 'Space') {
+        key.classList.remove('active');
+      }
+    });
+  } else {
+    keyboardKeys.forEach((key) => {
+      if (key.textContent === event.key) {
+        key.classList.remove('active');
+      }
+    });
+  }
 });
