@@ -7,9 +7,9 @@ textConteiner.classList.add('text-conteiner');
 
 const rows = [
   ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
-  ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\'],
-  ['CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'Enter'],
-  ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '\u2191', 'Shift'],
+  ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
+  ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
+  ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '\u2191', 'Shift'],
   ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', '\u2190', '\u2193', '\u2192', 'Ctrl'],
 ];
 
@@ -73,6 +73,22 @@ keyboardKeys.forEach((key) => {
       // eslint-disable-next-line no-bitwise
       const letter = isCapsLockOn ^ isShiftPressed ? keyText.toUpperCase() : keyText.toLowerCase();
       textConteiner.value += letter;
+    }
+  });
+});
+
+window.addEventListener('keydown', (event) => {
+  keyboardKeys.forEach((key) => {
+    if (key.textContent === event.key) {
+      key.classList.add('active');
+    }
+  });
+});
+
+window.addEventListener('keyup', (event) => {
+  keyboardKeys.forEach((key) => {
+    if (key.textContent === event.key) {
+      key.classList.remove('active');
     }
   });
 });
