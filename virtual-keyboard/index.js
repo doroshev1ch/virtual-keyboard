@@ -2,16 +2,30 @@
 // basic keyboard/input layout
 const textConteiner = document.createElement('textarea');
 const keyboardContainer = document.createElement('div');
+const languageToggle = document.createElement('button');
 keyboardContainer.classList.add('keyboard-container');
 textConteiner.classList.add('text-conteiner');
+languageToggle.textContent = 'Switch Language';
 
-const rows = [
-  ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
-  ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
-  ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
-  ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '\u2191', 'Shift'],
-  ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', '\u2190', '\u2193', '\u2192', 'Ctrl'],
-];
+const languages = ['en', 'ru'];
+const keyboardRows = {
+  en: [
+    ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
+    ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
+    ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
+    ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '\u2191', 'Shift'],
+    ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', '\u2190', '▼', '\u2192', 'Ctrl'],
+  ],
+  ru: [
+    ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
+    ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\'],
+    ['CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'],
+    ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '?', '\u2191', 'Shift'],
+    ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', 'ArrowLeft', '\u2193', '\u2192', 'Ctrl'],
+  ],
+};
+let lang = 'en';
+let rows = keyboardRows[lang];
 
 for (const row of rows) {
   const rowContainer = document.createElement('div');
@@ -23,12 +37,31 @@ for (const row of rows) {
     keyElement.textContent = key;
     rowContainer.appendChild(keyElement);
   }
-
   keyboardContainer.appendChild(rowContainer);
 }
 
 document.body.appendChild(textConteiner);
 document.body.appendChild(keyboardContainer);
+document.body.appendChild(languageToggle);
+
+//  switchLanguage
+function toggleLanguage() {
+  const index = languages.indexOf(lang);
+  lang = languages[(index + 1) % languages.length];
+  rows = keyboardRows[lang];
+
+  const keyboardRowsElements = document.querySelectorAll('.keyboard-row');
+  for (let i = 0; i < rows.length; i += 1) {
+    const keys = keyboardRowsElements[i].querySelectorAll('.keyboard-key');
+    for (let j = 0; j < rows[i].length; j += 1) {
+      keys[j].textContent = rows[i][j];
+    }
+  }
+}
+
+languageToggle.addEventListener('click', () => {
+  toggleLanguage();
+});
 
 // modifier keys properties
 const spaceElement = document.querySelector('.keyboard-row:nth-child(5) .keyboard-key:nth-child(4)');
@@ -68,7 +101,7 @@ keyboardKeys.forEach((key) => {
     } else if (keyText === 'Enter') {
       textConteiner.value += '\n';
     } else if (keyText === 'Alt') {
-      textConteiner.value += '\n';
+      textConteiner.value += '';
     } else {
       // eslint-disable-next-line no-bitwise
       const letter = isCapsLockOn ^ isShiftPressed ? keyText.toUpperCase() : keyText.toLowerCase();
@@ -77,6 +110,7 @@ keyboardKeys.forEach((key) => {
   });
 });
 
+// add key binding to virtual keyboard
 window.addEventListener('keydown', (event) => {
   keyboardKeys.forEach((key) => {
     if (key.textContent === event.key) {
