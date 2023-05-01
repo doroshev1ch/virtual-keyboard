@@ -1,6 +1,8 @@
 /* eslint-disable no-restricted-syntax */
+const inputConteiner = document.createElement('input');
 const keyboardContainer = document.createElement('div');
 keyboardContainer.classList.add('keyboard-container');
+inputConteiner.classList.add('input-conteiner');
 
 const rows = [
   ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
@@ -24,4 +26,8 @@ for (const row of rows) {
   keyboardContainer.appendChild(rowContainer);
 }
 
+document.body.appendChild(inputConteiner);
 document.body.appendChild(keyboardContainer);
+
+const spaceElement = document.querySelector('.keyboard-row:nth-child(5) .keyboard-key:nth-child(4)');
+spaceElement.style.width = '310px';

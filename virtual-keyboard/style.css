@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.input-conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
 .keyboard-container {
     display: flex;
     flex-direction: column;
@@ -8,28 +18,28 @@
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  
-  .keyboard-row {
+}
+.keyboard-row {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .keyboard-key {
+    width: auto;
+}
+.keyboard-key {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: auto;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     margin: 5px;
+    padding: 15px;
     cursor: pointer;
-  }
-  
-  .keyboard-key:hover {
-    background-color: #f2f2f2;
-  }
+}
+.keyboard-key:hover {
+    background-color: rgb(225, 206, 246);
+    border: 1px solid rgb(225, 206, 246);
+}
