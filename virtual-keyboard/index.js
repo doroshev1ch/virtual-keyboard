@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-syntax */
+// basic keyboard/input layout
 const inputConteiner = document.createElement('input');
 const keyboardContainer = document.createElement('div');
 keyboardContainer.classList.add('keyboard-container');
@@ -29,5 +30,18 @@ for (const row of rows) {
 document.body.appendChild(inputConteiner);
 document.body.appendChild(keyboardContainer);
 
+// Space properties
 const spaceElement = document.querySelector('.keyboard-row:nth-child(5) .keyboard-key:nth-child(4)');
 spaceElement.style.width = '310px';
+
+const keyboardKeys = document.querySelectorAll('.keyboard-key');
+keyboardKeys.forEach((key) => {
+  key.addEventListener('click', function print() {
+    const keyText = this.textContent;
+    if (keyText === 'Space') {
+      inputConteiner.value += ' ';
+    } else {
+      inputConteiner.value += keyText.toLowerCase();
+    }
+  });
+});
