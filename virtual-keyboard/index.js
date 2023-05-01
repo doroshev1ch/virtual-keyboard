@@ -158,3 +158,5 @@ window.addEventListener('keyup', (event) => {
     });
   }
 });
+
+document.write('<p>The keyboard is built on mac OS</p>');
